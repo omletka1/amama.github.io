@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Header</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="transparent">
+        <div class="menu-icon" onclick="toggleSidebar()">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="Menu">
+            <a href="index.html"><span class="site-name">StylishShop</span></a>
+        </div>
+        <div class="icon-group">
+            <a href="/favorites.html" class="icon-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Favorites" class="icon-black">
+            </a>
+            <a href="/cart.html" class="icon-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="Cart" class="icon-black">
+            </a>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div class="close-sidebar" onclick="toggleSidebar()">✖</div>
+
+        <a href="#">О нас</a>
+        <a href="#">Товары</a>
+        <a href="#">Акции</a>
+        <a href="#">Доставка</a>
+        <a href="#">Контакты</a>
+        <div class="sidebar-footer">        
+          <div class="sidebar-header">StylishShop</div>
+            <div class="social-icons">
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="YouTube"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="VK"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Telegram"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Header Scroll Effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                header.classList.remove('transparent');
+            } else {
+                header.classList.remove('scrolled');
+                header.classList.add('transparent');
+            }
+        });
+
+        // Sidebar Toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+    </script>
+
+<section class="about">
+    <div class="about-text">
+      <h1>О компании</h1>
+      <p>
+        <strong>Modamica</strong> это молодая и амбициозная компания, стремительно развивающаяся в мире текстильной индустрии. Мы создаем высококачественную трикотажную одежду для женщин, мужчин, детей, а также уютный домашний текстиль. Наше производство расположено в самом сердце текстильной столицы России – городе Иваново.
+
+        Мы работаем по принципу полного цикла, проходя все этапы создания изделий: от зарождения идеи и разработки эскизов до упаковки готовой продукции. Мы гордимся тем, что понимаем потребности наших клиентов, предугадываем их желания и с радостью воплощаем их мечты в жизнь.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="https://avatars.mds.yandex.net/i?id=fca6d48b503a08494d4dbf7544d79a8a_l-5858200-images-thumbs&n=13" alt="Производство">
+    </div>
+  </section>
+
+  <div class="about-us-section">
+    <!-- Блок 1: Фото слева, текст справа -->
+    <div class="block">
+      <img src="https://odevaiwear.com/upload/about/570a9079.jpg" alt="Фото 1" class="image">
+      <div class="text">
+        <p><strong>Наши преимущества:</strong></p>
+        <ul>
+          <li>Широкая размерная сетка от 48 до 62/64 размеров.</li>
+          <li>Идеальная посадка изделий.</li>
+          <li>Базовые фасоны и цвета.</li>
+          <li>Возможность подгонки изделия по фигуре.</li>
+          <li>Премиальное качество тканей и пошива.</li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Блок 2: Текст слева, фото справа -->
+    <div class="block">
+ 
+      <img src="https://odevaiwear.com/upload/about/img-0020.jpg" alt="Фото 2" class="image2">
+     <div class="text2">
+        <p>Мы стремимся изменить взгляд на моду plus-size и преобразить стиль одежды больших размеров.</p>
+      </div>    
+    </div>
+  
+    <!-- Блок 3: Фото слева, текст справа -->
+    <div class="block">
+      <img src="https://odevaiwear.com/upload/about/570a9673.jpg" alt="Фото 3" class="image3">
+      <div class="text3">
+        <p>Мы предлагаем сочетание комфорта, стиля и идеальной посадки для каждой женщины, независимо от размера.</p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <script src="js/about.js"></script>
+</body>
+</html>

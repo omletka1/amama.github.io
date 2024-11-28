@@ -1,0 +1,450 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.transparent {
+    background-color: transparent;
+}
+
+header.scrolled {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.menu-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10%;
+
+}
+
+.menu-icon img {
+    width: 37px;
+    height: 35px;
+}
+
+a {
+    text-decoration: none; /* Убирает подчеркивание с ссылки */
+}
+
+.site-name {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #000; /* Цвет текста */
+}
+.icon-group {
+    display: flex;
+    gap: 15px;
+    margin-right: 10%;
+}
+
+.icon-link {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon-link img {
+    width: 35px;
+    height: 37px;
+}
+
+.icon-black {
+    filter: brightness(0);
+}
+
+.icon-link:hover .icon-black {
+    filter: brightness(0.4);
+}
+
+.banner {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 75%), url('../img/index/IMG_0117.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+    color: white;
+    position: relative;
+}
+
+.banner h1 {
+    font-size: 4.5rem;
+    line-height: 1.4;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-in-out;
+    margin-left: 10%;
+    padding-top: 20%;
+}
+
+.banner h1 span {
+    display: block;
+    margin-left: 100px;
+    font-size: 4rem;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: #000;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.3s ease;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #007BFF;
+}
+
+.close-sidebar {
+    align-self: flex-end;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.close-sidebar:hover {
+    transform: rotate(90deg);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+}
+
+.sidebar-footer .social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sidebar-footer .social-icons img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.sidebar-footer .social-icons img:hover {
+    transform: scale(1.2);
+    filter: grayscale(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2.5rem;
+        margin-left: 4%;
+    }
+
+    .banner h1 span {
+        margin-left: 112px;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    .site-name {
+        font-size: 1rem;
+    }
+
+    .icon-group img {
+        width: 20px;
+        height: 20px;
+    }
+}
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh; /* Высота секции на весь экран */
+    overflow: hidden; /* Скрываем лишние части изображения */
+  }
+  
+  .about-text {
+    flex: 1;
+    max-width: 46%;
+    z-index: 2;
+    padding: 40px;
+    margin-right: 36%;
+
+  }
+  
+  .about-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .about-image {
+    position: absolute;
+    top: 0;
+    left: 22%;
+    width: 78vw;
+    height: 100vh;
+    clip-path: polygon(67% 0%, 100% 0%, 68% 100%, 34% 100%);
+    z-index: 1;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Масштабируем изображение без искажения */
+  }
+
+  .about-text {
+    opacity: 0; /* Изначально текст невидим */
+    transform: translateY(20px); /* Смещаем текст вниз */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Анимация */
+  }
+  
+  /* Когда текст в зоне видимости */
+  .about-text.visible {
+    opacity: 1; /* Текст становится видимым */
+    transform: translateY(0); /* Возвращаем в исходное положение */
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .about-container {
+        padding: 20px; /* Уменьшаем отступы на мобильных */
+        gap: 15px; /* Меньший разрыв между текстом и изображением */
+      }
+    
+      .about-text {
+        margin: 15px auto; /* Уменьшенные отступы */
+        position: relative;
+        top: -9%;
+        margin-left: 27%;
+      }
+    
+      .about-text h1 {
+        font-size: 1.6rem; /* Чуть меньший размер заголовка */
+        text-align: left; /* Оставляем выравнивание по левому краю */
+      }
+    
+      .about-text p {
+        font-size: 0.95rem; /* Уменьшаем текст для компактности */
+        line-height: 1.4;
+      }
+    
+      .about-image img {
+        margin-top: 15px; /* Сохранение отступа сверху */
+      }
+    .about-image {
+      clip-path: none; /* Убираем обрезку на мобильных устройствах */
+      height: 50vh; /* Сокращаем высоту изображения */
+      top: 6%;
+
+    }
+    .about-image img {
+        position: relative;
+        top: 125%;
+        margin-left: -11%;
+    }
+    .about-text h1 {
+        position: relative;
+        margin-LEFT: -101%;
+        top: 1%;
+    }
+    .about-text p {
+        width: 312%;
+        margin-left: -100%;
+        
+    }
+    }
+
+    .about-us-section {
+        display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-left: 21%;
+            padding: 40px;
+      }
+      
+      .block {
+        display: flex;
+        align-items: center;
+        gap: 20px; /* Отступ между текстом и изображением */
+      }
+      
+      .block:nth-child(even) {
+        flex-direction: row-reverse; /* Меняем порядок элементов для четных блоков */
+      }
+      
+      .image {
+        flex: 1;
+        max-width: 37%;
+        height: auto;
+        margin-left: -7.3%;
+        border-radius: 10px;
+    
+      }
+
+      .image2 {
+        flex: 1;
+        max-width: 37%;
+        height: auto;
+        margin-top: -20%;
+        margin-right: 28%;
+        border-radius: 10px;
+      }
+
+      .image3 {
+        flex: 1;
+        max-width: 37%;
+        height: auto;
+        margin-left: -7.3%;
+        margin-top: -16%;
+        border-radius: 10px;
+      }
+      
+      .text {
+        flex: 0.5;
+        font-size: 1.1rem;
+        line-height: 1.3;
+        margin-left: 4%;
+        margin-top: -12%;
+        color: #333;    
+      }
+
+      .text2 {
+        flex: 0.6;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-left: -7.3%;
+        margin-top: -14%;
+        color: #333;
+      }
+      .text3 {
+        flex: 1;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #333;
+        margin-left: 4%;
+        margin-right: 24%;
+        margin-top: -4%;    
+      }
+      
+      .text p {
+        margin: 0 0 10px 0;
+      }
+      
+      .text ul {
+        padding-left: 20px; /* Отступ для списка */
+        margin: 0;
+      }
+      
+      .text ul li {
+        margin-bottom: 10px;
+      }
+      
+      @media (max-width: 768px) {
+        /* Блоки с изображением */
+        .image-block {
+            height: 100vh;  /* Блок с изображением будет занимать всю высоту экрана */
+            position: relative;
+        }
+    
+        .image {
+            object-fit: cover; /* Изображения должны покрывать весь экран */
+            transition: transform 1s ease; /* Плавное изменение */
+        }
+    
+        /* Блок с текстом */
+        .text-block {
+            background-color: #fff;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+    
+        /* Стили для плавной анимации */
+        .image-block.visible .image {
+            transform: translateY(-100vh); /* Когда блок видим, изображение сдвигается вверх */
+        }
+    
+        .about-us-section {
+            scroll-snap-type: y mandatory;
+            overflow-y: auto;  /* Вертикальный скролл */
+        }
+    
+        .block {
+            scroll-snap-align: start;  /* Каждому блоку даем точку привязки */
+        }
+    }
